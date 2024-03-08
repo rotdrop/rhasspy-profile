@@ -232,7 +232,7 @@ class Profile:
     ) -> None:
         """Recursively overwrites values in base dictionary with values from new dictionary"""
         for k, v in new_dict.items():
-            if isinstance(v, collections.Mapping) and (k in base_dict):
+            if isinstance(v, collections.abc.Mapping) and (k in base_dict):
                 Profile.recursive_update(base_dict[k], v)
             else:
                 base_dict[k] = v
